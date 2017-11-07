@@ -1,5 +1,5 @@
 ---
-title: Jasakonveksi
+title: CARA CEPAT MENGGEMUKAN BADAN
 timezone: Asia/Jakarta
 collections:
   posts:
@@ -16,14 +16,13 @@ defaults:
     is_post: true
     layout: post
     tags:
-    - konveksi jakarta
-    - konveksi depok
-    - konveksi seragam
-    - konveksi kaos
-name: JASA KONVEKSI JAKARTA PARTAI KECIL BESAR
-description: Jasa konveksi menerima pembuatan kemeja, kaos, t-sirt-polo shirt untuk
-  perusahaan atau online shop instagram. WA 083890722797.
-avatar: https://raw.githubusercontent.com/kemtol/jasakonveksi/master/images/jasa-konveksi-jakarta-depok.gif
+    - obat gemuk
+    - cara menjadi gemuk
+    - vitamin gemuk
+    - gendut gagah
+name: CARA CEPAT MENGGENDUTKAN BADAN
+description: Jangan klik, khusus orang kurus yang mau menggendutkan badan saja, cara efektif menggemukan badan.
+avatar: 
 footer-links:
   dribbble: 
   email: 
@@ -38,10 +37,10 @@ footer-links:
   stackoverflow: 
   youtube: 
   googleplus: 
-disqus: jasakonveksi
-google_analytics: UA-74059274-3
-url: http://jasakonveksi.com
-baseurl: 
+disqus:
+google_analytics:
+url: https://kemtol.github.io/gendutgagah/
+baseurl: https://kemtol.github.io/gendutgagah/
 permalink: "/:title/"
 excerpt_separator: "<!--more-->"
 version: v1.2.0
