@@ -1,0 +1,65 @@
+---
+title: Jasakonveksi
+timezone: Asia/Jakarta
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    is_post: true
+    layout: post
+    tags:
+    - konveksi jakarta
+    - konveksi depok
+    - konveksi seragam
+    - konveksi kaos
+name: JASA KONVEKSI JAKARTA PARTAI KECIL BESAR
+description: Jasa konveksi menerima pembuatan kemeja, kaos, t-sirt-polo shirt untuk
+  perusahaan atau online shop instagram. WA 083890722797.
+avatar: https://raw.githubusercontent.com/kemtol/jasakonveksi/master/images/jasa-konveksi-jakarta-depok.gif
+footer-links:
+  dribbble: 
+  email: 
+  facebook: 
+  flickr: 
+  github: 
+  instagram: 
+  linkedin: 
+  pinterest: 
+  rss: 
+  twitter: 
+  stackoverflow: 
+  youtube: 
+  googleplus: 
+disqus: jasakonveksi
+google_analytics: UA-74059274-3
+url: http://jasakonveksi.com
+baseurl: 
+permalink: "/:title/"
+excerpt_separator: "<!--more-->"
+version: v1.2.0
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+sass:
+  style: expanded
+gems:
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-redirect-from
+- jekyll-seo-tag
+exclude:
+- Gemfile
+- Gemfile.lock
+- LICENSE
+- README.md
+- CNAME

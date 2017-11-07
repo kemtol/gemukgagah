@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+    {% include meta.html %}
+    {% seo %}
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href='{{ site.baseurl }}/images/favicon.ico' rel='icon' type='image/x-icon'/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <div style="text-align: center;font-size: 0.9rem;padding: 0.5rem;font-style: italic;">Mau tanya tanya dulu? Silahkan <strong>WA: 0838-9072-2797</strong></div>
+        <header class="masthead clearfix">
+          <a href="{{ site.baseurl }}/" class="site-avatar">
+            <span class="back-to-home">
+              JASAKONVEKSI.COM<br/>
+              <span>Jakarta, Depok &amp; Bandung</span>
+            </span>
+            <img alt="konveksi makloon jahit jakarta dan depok" src="{{ site.avatar }}" />
+          </a>
+
+          {% if page.is_post != true %}
+          <div class="site-info">
+            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <p class="site-description">
+              {{ site.description }}
+              <br />
+              <span class="no-hp">WA 0838-9072-2797</span>
+            </p>
+          </div>
+          {% endif %}
+
+          <!--<nav>
+            <a href="{{ site.baseurl }}/">HOME</a>
+            <a href="{{ site.baseurl }}/daftar-harga-konveksi-kaos.html">KAOS</a>
+            <a href="{{ site.baseurl }}/daftar-harga-konveksi-seragam.html">SERAGAM</a>
+            <a href="{{ site.baseurl }}/daftar-harga-jahit-celana.html">CELANA</a>           
+          </nav>-->
+          
+          <ul id="menutop">
+            <li><a href="/daftar-harga-konveksi-kaos.html"><img src="https://2.bp.blogspot.com/-cjI8lhHBeyc/WNSeRxR80tI/AAAAAAAAEEM/tzwLkw9FjpogDK4uNLg70lxvKpzVBb9bwCLcB/s200/jual-katun-combed-30s.jpg" /></a>MAKLOON T-SHIRT</li>
+            <li><a href="/daftar-harga-konveksi-seragam.html"><img src="https://68.media.tumblr.com/0b8e61feef1fac3e9a5bc0df12f979ff/tumblr_oo1ek9hlej1r4owcyo1_250.jpg" /></a>MAKLOON KEMEJA</li>
+            <li><a href="/daftar-harga-jahit-celana.html"><img src="https://68.media.tumblr.com/ff3e8e90e91159c4b4e5123919f851dc/tumblr_oo1etnRAGa1r4owcyo1_r1_250.jpg" /></a>MAKLOON CELANA</li>
+            <li><a href="/menerima-pembuatan-label-baju.html"><img src="{{ site.baseurl }}/images/jasa-label-baju-jakarta.jpg" /></a>LABEL BAJU</li>
+          </ul>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      {{ content }}
+      <br/><br/>
+      <div style="border-top:1px solid gray;text-align:center;padding-top:2rem">
+          <img src="{{ site.baseurl }}/images/konveksi-murah-di-jakarta.jpg" alt="Hubungi kami di 083890722797" style="width:100%;width: 100%;max-width: 400px;" />
+      </div>
+    </div>
+    
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div><strong>Alamat JASAKONVEKSI:</strong><br/>Jl. Merpati 3 Komplek Griya Cinere, Limo, Depok, 16515</div><br/>
+          {% include svg-icons.html %}
+        </footer>
+      </div>
+    </div>
+    
+    {% include analytics.html %}
+  </body>
+</html>
