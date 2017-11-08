@@ -39,8 +39,8 @@ footer-links:
   googleplus: 
 disqus:
 google_analytics:
-url: https://kemtol.github.io/gendutgagah/
-baseurl: https://kemtol.github.io/gendutgagah/
+url: https://kemtol.github.io/gemukgagah/
+baseurl: https://kemtol.github.io/gemukgagah/
 permalink: "/:title/"
 excerpt_separator: "<!--more-->"
 version: v1.2.0
