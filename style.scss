@@ -157,6 +157,9 @@ img {
 
 .green-border{
 	border:10px solid lawngreen;
+	@include mobile{
+		border:5px solid lawngreen;
+	}
 }
 
 /*********************/
