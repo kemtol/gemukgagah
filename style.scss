@@ -302,6 +302,24 @@ img {
 // .main
 //
 
+
+.stabilo{background:yellow}
+
+.box-harga{
+	margin-bottom:2rem;
+	.hx,.hy{
+		color:red;display:block
+	}
+	.hx{
+		font-size:2rem;
+		text-decoration: line-through;
+	}
+	.hy{
+		font-size:3rem;
+		font-weight:bold;
+	}
+}
+
 .posts > .post {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
