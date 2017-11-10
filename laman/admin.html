@@ -26,7 +26,8 @@ is_admin: true
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
         $.each(val.produk, function(key, value){
-          console.log(key, value);
+          content += '<span>' + key + '</span>';
+          content += '<span>' + value + '</span>';
         });
         content += '</td>'
         content += '</tr>';
