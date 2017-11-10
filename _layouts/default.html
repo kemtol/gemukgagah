@@ -27,10 +27,9 @@
   </head>
 
   <body>
+    {% if page.is_admin != true %}
     <div class="wrapper-masthead">
-      {% if page.is_admin != true %}
       <div style="background:yellow;text-align: center;font-size: 1rem;padding: 1rem;font-weight:bold;">Kita tahu bro, kamu minder dengan badanmu yang kurus. Konsultasi WA 0838-9072-2797</strong></div>
-      {% endif %}  
       <div class="container">
         <header class="masthead clearfix">
           {% if page.is_admin != true %}
@@ -43,7 +42,7 @@
         </header>
       </div>
     </div>
-    
+    {% endif %}
     {% if page.is_admin != true %}
     <div id="main" role="main" class="container" style="text-align:center">
       {{ content }}
