@@ -11,20 +11,11 @@ is_admin: true
 
 
 <script>
-  //get value
-  //const preObject = $("#object");
-  
   //create ref
-  const dbRef = firebase.database().ref().child('orders');
-  //dbRef.on('value', snap => {
-  //dbRef.on('child_added', snap => {
-    //var order = snap.val();
-    //$("#object").append("<tr><td>snap.val()</td><td>snap.val()</td></tr>");
-    
-  //})
-  dbRef.on('value', function(snapshot){
-        if(snapshot.exists()){
-            var content = '';
+  const dbRef = firebase.database().ref();
+  dbRef.child('orders').on('value', function(snapshot){
+        if(snapshot.exists()){          
+            var content = '';          
             snapshot.forEach(function(data){
                 var val = data.val();
                 content +='<tr>';
@@ -32,7 +23,7 @@ is_admin: true
                 content += '<td>' + val.nama + '</td>';
                 content += '<td>' + val.alamat + '</td>';
                 content += '<td>' + val.nohp + '</td>';
-                content += '<td>' + val.pesanan + '</td>';
+                content += '<td>' + val.produk[0] + '</td>';              
                 content += '</tr>';
             });
             $('#object').html(content);
