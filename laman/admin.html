@@ -13,7 +13,9 @@ is_admin: true
 <script>
   //create ref
   const dbRef = firebase.database().ref();
-  console.log(dbRef.child('produk').val());
+  dbRef.child('produk').on('value', function(snapshot){
+    console.log(snapshot.val());
+  });
   dbRef.child('orders').on('value', function(snapshot){
     //if(snapshot.exists()){          
     var content = '';          
