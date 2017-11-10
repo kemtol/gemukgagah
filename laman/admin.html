@@ -6,7 +6,7 @@ is_post: true
 is_admin: true
 ---
 
-<table id="object">
+<table id="object" width="100%">
 </table>
 
 
@@ -26,6 +26,12 @@ is_admin: true
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
         val.produk.forEach(function(value, key){
+          dbRef.child('produk/' + key).on('value', function(snaps){
+            snaps.forEach(function(dat){
+              var v = dat.val();
+              content += '<span>' + v.harga + '</span>'; 
+            });
+          });
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
         });
