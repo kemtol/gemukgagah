@@ -30,16 +30,17 @@ is_admin: true
             snaps.forEach(function(dat){
               var v = dat.val();
               content += '<span>' + v.nama + '</span>';
-              alert(content);
+              console.log(content);
             });
           });
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
-          alert(content);
+          console.log(content);
         });
         content += '</td>'
         content += '</tr>';
     });
+    console.log(content);
     $('#object').html(content);
     //}
   });
