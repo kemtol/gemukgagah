@@ -29,7 +29,7 @@ is_admin: true
           dbRef.child('produk').once('value', function(snaps){
             snaps.forEach(function(dat){
               var v = dat.val();
-              content += v.harga;
+              content += '<span>' + v.harga.toString() + '</span>';
             });
           });
           content += '<span>' + key + '</span>';
