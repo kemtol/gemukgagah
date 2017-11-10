@@ -28,7 +28,9 @@
 
   <body>
     <div class="wrapper-masthead">
+      {% if page.is_admin != true %}
       <div style="background:yellow;text-align: center;font-size: 1rem;padding: 1rem;font-weight:bold;">Kita tahu bro, kamu minder dengan badanmu yang kurus. Konsultasi WA 0838-9072-2797</strong></div>
+      {% endif %}  
       <div class="container">
         <header class="masthead clearfix">
           {% if page.is_admin != true %}
@@ -41,7 +43,8 @@
         </header>
       </div>
     </div>
-
+    
+    {% if page.is_admin != true %}
     <div id="main" role="main" class="container" style="text-align:center">
       {{ content }}
       <br/><br/>
@@ -49,7 +52,11 @@
           <img src="{{ site.baseurl }}images/konveksi-murah-di-jakarta.jpg" alt="Hubungi kami di 083890722797" style="width:100%;width: 100%;max-width: 400px;" />
       </div>
     </div>
-    
+    {% else %}
+      {{ content }}  
+    {% endif %}
+  
+    {% if page.is_admin != true %}
     <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
@@ -58,6 +65,7 @@
         </footer>
       </div>
     </div>
+    {% endif %}
     
     {% include analytics.html %}
   
