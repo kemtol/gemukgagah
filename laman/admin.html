@@ -24,7 +24,7 @@ is_post: true
   //create ref
   const dbRef = firebase.database().ref().child('orders');
   dbRef.on('value', snap => {
-    $("#object").innerText = JSON.stringify(snap.val(),null,3);
+    $("#object").text(JSON.stringify(snap.val(),null,3));
   })
   
 </script>
