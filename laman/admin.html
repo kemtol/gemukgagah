@@ -23,12 +23,12 @@ is_admin: true
         content += '<td>' + val.nama + '</td>';
         content += '<td>' + val.alamat + '</td>';
         content += '<td>' + val.nohp + '</td>';
-      content += '<td>';
+        content += '<td>';
         //content += '<td>' + val.produk + '</td>';
         $.each(val.produk, function(produkID) {
-            content += '<span>tes</span>';
+            content += '<span>'+produkID.key()+'</span>';
         });
-      content += '</td>'
+        content += '</td>'
         content += '</tr>';
         console.dir(val.produk);
     });
