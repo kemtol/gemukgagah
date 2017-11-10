@@ -29,7 +29,8 @@ is_admin: true
           dbRef.child('produk').once('value', function(snaps){
             snaps.forEach(function(dat){
               var v = dat.val();
-              content += '<span>' + v.nama + '</span>';
+              content += "tai";
+              alert(content);
             });
           });
           content += '<span>' + key + '</span>';
