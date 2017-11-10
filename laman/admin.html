@@ -6,13 +6,6 @@ is_post: true
 ---
 
 <table id="object">
-  <tr>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-    <td>5</td>
-  </tr>
 </table>
 
 
@@ -23,9 +16,23 @@ is_post: true
   //create ref
   const dbRef = firebase.database().ref().child('orders');
   //dbRef.on('value', snap => {
-  dbRef.on('child_added', snap => {
+  //dbRef.on('child_added', snap => {
     //var order = snap.val();
-    $("#object").append("<tr><td>snap.name.val()</td><td>snap.alamat.val()</td></tr>");
-  })
+    //$("#object").append("<tr><td>snap.val()</td><td>snap.val()</td></tr>");
+    
+  //})
+  dbRef.once('value', function(snapshot){
+        if(snapshot.exists()){
+            var content = '';
+            snapshot.forEach(function(data){
+                var val = data.val();
+                content +='<tr>';
+                content += '<td>' + val.nama + '</td>';
+                content += '<td>' + val.alamat + '</td>';
+                content += '</tr>';
+            });
+            $('#object').append(content);
+        }
+    });
   
 </script>
