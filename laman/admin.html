@@ -19,12 +19,12 @@ is_post: true
 
 <script>
   //get value
-  const preObject = document.getElementById('object');
+  //const preObject = $("#object");
   
   //create ref
   const dbRef = firebase.database().ref().child('orders');
   dbRef.on('value', snap => {
-    preObject.innerText = JSON.stringify(snap.val(),null,3);
+    $("#object").innerText = JSON.stringify(snap.val(),null,3);
   })
   
 </script>
