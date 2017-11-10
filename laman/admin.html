@@ -22,7 +22,7 @@ is_post: true
   const preObject = document.getElementById('object');
   
   //create ref
-  const dbRef = firebase.database().ref().child('object');
+  const dbRef = firebase.database().ref().child('orders');
   dbRef.on('value', snap => {
     preObject.innerText = JSON.stringify(snap.val(),null,3);
   })
