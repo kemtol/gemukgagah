@@ -14,21 +14,26 @@ is_admin: true
   //create ref
   const dbRef = firebase.database().ref();
   dbRef.child('orders').on('value', function(snapshot){
-        if(snapshot.exists()){          
-            var content = '';          
-            snapshot.forEach(function(data){
-                var val = data.val();
-                content +='<tr>';
-                content += '<td>' + val.ref + '</td>';              
-                content += '<td>' + val.nama + '</td>';
-                content += '<td>' + val.alamat + '</td>';
-                content += '<td>' + val.nohp + '</td>';
-                content += '<td>' + val.produk + '</td>';              
-                content += '</tr>';
-                console.dir(val.produk);
-            });
-            $('#object').html(content);
-        }
+    //if(snapshot.exists()){          
+    var content = '';          
+    snapshot.forEach(function(data){
+        var val = data.val();
+        content +='<tr>';
+        content += '<td>' + val.ref + '</td>';              
+        content += '<td>' + val.nama + '</td>';
+        content += '<td>' + val.alamat + '</td>';
+        content += '<td>' + val.nohp + '</td>';
+      content += '<td>';
+        //content += '<td>' + val.produk + '</td>';
+        $.each(val.produk, function(produkID) {
+            content += '<span>tes</span>';
+        });
+      content += '</td>'
+        content += '</tr>';
+        console.dir(val.produk);
     });
+    $('#object').html(content);
+    //}
+  });
   
 </script>
