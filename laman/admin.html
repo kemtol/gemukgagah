@@ -25,7 +25,7 @@ is_admin: true
         content += '<td>' + val.nohp + '</td>';
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
-        $.each(val.produk, function(key, value){
+        val.produk.forEach(function(key, value){
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
         });
