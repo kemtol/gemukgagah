@@ -25,12 +25,11 @@ is_admin: true
         content += '<td>' + val.nohp + '</td>';
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
-        $.each(val.produk, function(produkID) {
-            content += '<span>'+ produkID +'</span>';
+        $.each(val.produk, function(key, value){
+          console.log(key, value);
         });
         content += '</td>'
         content += '</tr>';
-        console.dir(val.produk);
     });
     $('#object').html(content);
     //}
