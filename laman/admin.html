@@ -23,7 +23,7 @@ is_admin: true
                 content += '<td>' + val.nama + '</td>';
                 content += '<td>' + val.alamat + '</td>';
                 content += '<td>' + val.nohp + '</td>';
-                content += '<td>' + val.produk[0] + '</td>';              
+                content += '<td>' + val.produk[0].val() + '</td>';              
                 content += '</tr>';
             });
             $('#object').html(content);
