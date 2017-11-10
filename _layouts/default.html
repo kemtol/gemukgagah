@@ -45,6 +45,19 @@
     
     {% include analytics.html %}
   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAzKbXNXi0HzuPXQSYKVIW2MwwFxiL2SpQ",
+        authDomain: "b2b2c-ccdea.firebaseapp.com",
+        databaseURL: "https://b2b2c-ccdea.firebaseio.com",
+        projectId: "b2b2c-ccdea",
+        storageBucket: "b2b2c-ccdea.appspot.com",
+        messagingSenderId: "665052228423"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>
