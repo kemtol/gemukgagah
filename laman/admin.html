@@ -26,8 +26,8 @@ is_admin: true
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
         val.produk.forEach(function(value, key){
-          dbRef.child('produk/' + key).once('value', function(snapshot){
-            snapshot.forEach(function(dat){
+          dbRef.child('produk').once('value', function(snaps){
+            snaps.forEach(function(dat){
               var v = dat.val();
               content += '<span>' + v.harga + '</span>';
               console.log(v.harga);
