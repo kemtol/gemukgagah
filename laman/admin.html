@@ -29,12 +29,13 @@ is_admin: true
           dbRef.child('produk').once('value', function(snaps){
             snaps.forEach(function(dat){
               var v = dat.val();
-              content += "tai";
+              content += '<span>' + v.nama + '</span>';
               alert(content);
             });
           });
-          content += '<span>' + key + '</span>';
+          content += >'<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
+          alert(content);
         });
         content += '</td>'
         content += '</tr>';
