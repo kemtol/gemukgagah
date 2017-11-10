@@ -26,9 +26,9 @@ is_admin: true
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
         val.produk.forEach(function(value, key){
-          dbRef.child('produk/'+key).once('value',function(snaps){
+          /*dbRef.child('produk/'+key).once('value',function(snaps){
             console.log(snaps.val());
-          });
+          });*/
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
         });
