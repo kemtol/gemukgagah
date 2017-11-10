@@ -24,7 +24,8 @@ is_post: true
   const dbRef = firebase.database().ref().child('orders');
   //dbRef.on('value', snap => {
   dbRef.on('child_added', snap => {
-    $("#object").append("<tr><td>"+JSON.stringify(snap.val())+"</tr></td>");
+    var order = snap.val();
+    $("#object").append("<tr><td>order.name</td><td>order.alamat</td></tr>");
   })
   
 </script>
