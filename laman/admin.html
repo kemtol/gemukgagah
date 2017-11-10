@@ -4,9 +4,8 @@ permalink: admin.html
 layout: page
 is_post: true
 ---
-<pre id="object">
-</pre>
-<table>
+
+<table id="object">
   <tr>
     <td>1</td>
     <td>2</td>
@@ -24,7 +23,7 @@ is_post: true
   //create ref
   const dbRef = firebase.database().ref().child('orders');
   dbRef.on('value', snap => {
-    $("#object").text(JSON.stringify(snap.val()));
+    $("#object").html(JSON.stringify(snap.val()));
   })
   
 </script>
