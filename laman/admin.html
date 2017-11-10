@@ -13,6 +13,7 @@ is_admin: true
 <script>
   //create ref
   const dbRef = firebase.database().ref();
+  console.dir(dbRef.child('produk'));
   dbRef.child('orders').on('value', function(snapshot){
     //if(snapshot.exists()){          
     var content = '';          
@@ -26,13 +27,6 @@ is_admin: true
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
         val.produk.forEach(function(value, key){
-          dbRef.child('produk').once('value', function(snaps){
-            snaps.forEach(function(dat){
-              var v = dat.val();
-              content += '<span>' + v.nama + '</span>';
-              console.log(content);
-            });
-          });
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
           console.log(content);
