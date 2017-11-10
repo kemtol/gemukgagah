@@ -21,7 +21,7 @@ is_post: true
     //$("#object").append("<tr><td>snap.val()</td><td>snap.val()</td></tr>");
     
   //})
-  dbRef.once('value', function(snapshot){
+  dbRef.on('value', function(snapshot){
         if(snapshot.exists()){
             var content = '';
             snapshot.forEach(function(data){
