@@ -46,14 +46,14 @@ is_admin: true
   });
   });*/
   const dbRef = firebase.database().ref();
-  var xorders;
-  var xproduk={};
-  dbRef.child('orders').once('value',function(snaporder){
-    console.log(JSON.stringify(snaporder.val(),null,2));
+  
+  var xproduk = dbRef.child('orders').once('value',function(snaporder){
+    //console.log(JSON.stringify(snaporder.val(),null,2));
+    return snaporder.val();
   });
+  console.log(xproduk)
   dbRef.child('produk').once('value',function(snapproduk){
-    xproduk.push(snapproduk.val());
+    //xproduk.push(snapproduk.val());
   });
-  console.log(JSON.stringify(xproduk,null,3));
   
 </script>
