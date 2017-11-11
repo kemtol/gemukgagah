@@ -27,8 +27,10 @@ is_admin: true
         //content += '<td>' + val.produk + '</td>';
         val.produk.forEach(function(value, key){
           dbRef.child('produk').once('value',function(snaps){
-            var v = snaps.val();
-            console.log(v);
+            snaps.forEach(function(i)){
+              var v = i.val();
+              console.log(v);
+            });
           });
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
