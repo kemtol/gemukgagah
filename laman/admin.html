@@ -12,6 +12,7 @@ is_admin: true
 
 <script>
   //create ref
+  $(document).ready(function(){
   const dbRef = firebase.database().ref();
   var content = '';
   dbRef.child('orders').once('value', function(snapshot){
@@ -29,7 +30,6 @@ is_admin: true
             snaps.forEach(function(i){
               var v = i.val();
               if(v.id==key){
-                console.log(v.id);
                 content += '<span>Rp. ' + v.harga + '</span>';
               }
             });
@@ -41,8 +41,10 @@ is_admin: true
         content += '</tr>';
     });
     //}
+    console.log(content);
   });
   $('#object').html(content);
+  });
   /*const dbRef = firebase.database().ref();
   var xorders;
   var xproduk={};
