@@ -45,7 +45,7 @@ is_admin: true
   });*/
   const dbRef = firebase.database().ref();
   var xorders;
-  var xproduk[];
+  var xproduk={};
   dbRef.child('orders').once('value',function(snaporder){
     console.log(JSON.stringify(snaporder.val(),null,2));
   });
