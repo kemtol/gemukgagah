@@ -12,10 +12,10 @@ is_admin: true
 
 <script>
   //create ref
-  /*const dbRef = firebase.database().ref();
+  const dbRef = firebase.database().ref();
+  var content = '';
   dbRef.child('orders').once('value', function(snapshot){
-    //if(snapshot.exists()){          
-    var content = '';          
+    //if(snapshot.exists()){                    
     snapshot.forEach(function(data){
         var val = data.val();
         content +='<tr>';
@@ -40,10 +40,10 @@ is_admin: true
         content += '</td>'
         content += '</tr>';
     });
-    $('#object').html(content);
     //}
-  });*/
-  const dbRef = firebase.database().ref();
+  });
+  $('#object').html(content);
+  /*const dbRef = firebase.database().ref();
   var xorders;
   var xproduk={};
   dbRef.child('orders').once('value',function(snaporder){
@@ -52,6 +52,6 @@ is_admin: true
   dbRef.child('produk').once('value',function(snapproduk){
     xproduk=snapproduk.val();
   });
-  console.log(JSON.stringify(xproduk,null,3));
+  console.log(JSON.stringify(xproduk,null,3));*/
   
 </script>
