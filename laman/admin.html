@@ -29,6 +29,9 @@ is_admin: true
           dbRef.child('produk').once('value',function(snaps){
             snaps.forEach(function(i){
               var v = i.val();
+              if(v.id==key){
+                content += '<span>Rp. ' + v.harga + '</span>';
+              }
               console.log(v.harga);
             });
           });
