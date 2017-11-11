@@ -14,7 +14,8 @@ is_admin: true
 <table id="object" width="100%">
   <thead>
     <tr>
-      <th>WEBSITE REF</th>
+      <th>TGL</th>
+      <th>REF</th>
       <th>NAMA PEMESAN</th>
       <th>ALAMAT</th>
       <th>NOHP</th>
@@ -29,13 +30,26 @@ is_admin: true
 <script>
   const dbRef = firebase.database().ref();
   
+  function timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+  }
+  
   dbRef.child('orders').once('value',function(snaporder){
     dbRef.child('produk').once('value',function(snapproduk){
       var content = '';
       snaporder.forEach(function(data){
         var val = data.val();
         content +='<tr>';
-        content += '<td>' + val.time + '</td>';
+        content += '<td>' + timeConverter(val.time) + '</td>';
         content += '<td>' + val.ref + '</td>';              
         content += '<td>' + val.nama + '</td>';
         content += '<td>' + val.alamat + '</td>';
