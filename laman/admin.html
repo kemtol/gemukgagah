@@ -47,7 +47,7 @@ is_admin: true
   var xorders;
   var xproduk;
   dbRef.child('orders').once('value',function(snaporder){
-    console.log(JSON.stringify(snaporder.val(),null,2);
+    console.log(JSON.stringify(snaporder.val(),null,2));
   });
   dbRef.child('produk').once('value',function(snapproduk){
     xproduk=snapproduk.val();
