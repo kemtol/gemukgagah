@@ -43,12 +43,15 @@ is_admin: true
     $('#object').html(content);
     //}
   });*/
+  const dbRef = firebase.database().ref();
   var xorders;
   var xproduk;
-  firebase.database().ref().child('orders').once('value',function(snaporder){xorders=snaporder.val()});
-  firebase.database().ref().child('produk').once('value',function(snapproduk){xproduk=snapproduk.val()});
-  
-  console.log(JSON.stringify(xorders,null,3));
+  dbRef.child('orders').once('value',function(snaporder){
+    console.log(JSON.stringify(snaporder.val(),null,2);
+  });
+  dbRef.child('produk').once('value',function(snapproduk){
+    xproduk=snapproduk.val();
+  });
   console.log(JSON.stringify(xproduk,null,3));
   
 </script>
