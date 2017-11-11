@@ -59,6 +59,12 @@ is_admin: true
         content += '<td>' + val.nohp + '</td>';
         content += '<td>';
         val.produk.forEach(function(value, key){
+          snapproduk.forEach(function(i){
+            var v = i.val();
+            if(v.id==key){
+              content += '<span>Rp. ' + v.harga + '</span>';
+            }
+          });
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
         });
