@@ -47,13 +47,20 @@ is_admin: true
   });*/
   const dbRef = firebase.database().ref();
   
-  var xproduk = dbRef.child('orders').once('value',function(snaporder){
-    //console.log(JSON.stringify(snaporder.val(),null,2));
-    return snaporder.val();
-  });
-  console.log(JSON.stringify(xproduk,null,3));
-  dbRef.child('produk').once('value',function(snapproduk){
-    //xproduk.push(snapproduk.val());
+  dbRef.child('orders').once('value',function(snaporder){
+    var content = '';
+    dbRef.child('produk').once('value',function(snapproduk){
+      snapshot.forEach(function(data){
+        var val = data.val();
+        content +='<tr>';
+        content += '<td>' + val.ref + '</td>';              
+        content += '<td>' + val.nama + '</td>';
+        content += '<td>' + val.alamat + '</td>';
+        content += '<td>' + val.nohp + '</td>';
+        content += '</tr>';
+      });
+    });
+    $('#object').html(content);
   });
   
 </script>
