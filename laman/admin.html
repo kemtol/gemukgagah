@@ -26,7 +26,7 @@ is_admin: true
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
         val.produk.forEach(function(value, key){
-          dbRef.child('produk').startAt(key).endAt(key)once('value',function(snaps){
+          dbRef.child('produk/id').startAt(key).endAt(key).once('value',function(snaps){
             var v = snaps.val();
             content += '<span>' + v.harga + '</span>';
           });
