@@ -28,7 +28,7 @@ is_admin: true
         val.produk.forEach(function(value, key){
           dbRef.child('produk/id').startAt(key).endAt(key).once('value',function(snaps){
             var v = snaps.val();
-            vonsole.log(v);
+            console.log(v);
           });
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
