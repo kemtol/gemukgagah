@@ -27,8 +27,8 @@ is_admin: true
         //content += '<td>' + val.produk + '</td>';
         val.produk.forEach(function(value, key){
           dbRef.child('produk').orderBy('id').equalTo(key).once('value',function(snaps){
-            var harga = snaps.val();
-            content += '<span>' + harga + '</span>';
+            var v = snaps.val();
+            content += '<span>' + v.harga + '</span>';
           });
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
