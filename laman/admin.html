@@ -13,7 +13,7 @@ is_admin: true
 <script>
   //create ref
   const dbRef = firebase.database().ref();
-  dbRef.child('orders').on('value', function(snapshot){
+  dbRef.child('orders').once('value', function(snapshot){
     //if(snapshot.exists()){          
     var content = '';          
     snapshot.forEach(function(data){
@@ -26,9 +26,10 @@ is_admin: true
         content += '<td>';
         //content += '<td>' + val.produk + '</td>';
         val.produk.forEach(function(value, key){
-          /*dbRef.child('produk/'+key).once('value',function(snaps){
-            console.log(snaps.val());
-          });*/
+          dbRef.child('orders').orderBy('id').equalTo(key).once('value',function(snaps){
+            var harga = snaps.val();
+            content += '<span>' + harga + '</span>';
+          });
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
         });
