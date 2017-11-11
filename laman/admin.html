@@ -57,12 +57,15 @@ is_admin: true
         content += '<td>' + val.nama + '</td>';
         content += '<td>' + val.alamat + '</td>';
         content += '<td>' + val.nohp + '</td>';
+        content += '<td>';
         val.produk.forEach(function(value, key){
           content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
         });
+        content += '</td>';
         content += '</tr>';
       });
+      console.log(content);
       $('#object').html(content);
     });
   });
