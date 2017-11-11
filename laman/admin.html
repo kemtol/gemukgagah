@@ -15,7 +15,7 @@ is_admin: true
   $(document).ready(function(){
   const dbRef = firebase.database().ref();
   var content = '';
-  dbRef.child('orders').once('value', function(snapshot){
+  dbRef.child('orders').on('value', function(snapshot){
     //if(snapshot.exists()){                    
     snapshot.forEach(function(data){
         var val = data.val();
@@ -42,8 +42,8 @@ is_admin: true
     });
     //}
     console.log(content);
+    $('#object').html(content);
   });
-  $('#object').html(content);
   });
   /*const dbRef = firebase.database().ref();
   var xorders;
