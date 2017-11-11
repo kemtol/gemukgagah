@@ -54,20 +54,20 @@ is_admin: true
         content += '<td>' + val.nama + '</td>';
         content += '<td>' + val.alamat + '</td>';
         content += '<td>' + val.nohp + '</td>';
-        content += '<td>';
+        content += '<td><ol>';
         val.produk.forEach(function(value, key){
-          content += '<div>';
+          content += '<li>';
           snapproduk.forEach(function(i){
             var v = i.val();
             if(v.id==key){
-              content += '<span>' + v.name + '</span> / ';
+              content += '<span>' + v.nama + '</span> / ';
               content += '<span>Rp. ' + v.harga + '</span> / ';
             }
           });
           content += '<span>' + value + '</span>';
-          content += '</div>';
+          content += '</li>';
         });
-        content += '</td>';
+        content += '</ol></td>';
         content += '</tr>';
       });
       $('#object tbody').html(content);
