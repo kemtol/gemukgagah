@@ -7,44 +7,21 @@ is_admin: true
 ---
 
 <table id="object" width="100%">
+  <thead>
+    <tr>
+      <th>WEBSITE REF</th>
+      <th>NAMA PEMESAN</th>
+      <th>ALAMAT</th>
+      <th>NOHP</th>
+      <th>ORDERAN</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
 </table>
 
 
 <script>
-  //create ref
-  /*$(document).ready(function(){
-  const dbRef = firebase.database().ref();
-  var content = '';
-  dbRef.child('orders').on('value', function(snapshot){
-    //if(snapshot.exists()){                    
-    snapshot.forEach(function(data){
-        var val = data.val();
-        content +='<tr>';
-        content += '<td>' + val.ref + '</td>';              
-        content += '<td>' + val.nama + '</td>';
-        content += '<td>' + val.alamat + '</td>';
-        content += '<td>' + val.nohp + '</td>';
-        content += '<td>';
-        val.produk.forEach(function(value, key){
-          dbRef.child('produk').once('value',function(snaps){
-            snaps.forEach(function(i){
-              var v = i.val();
-              if(v.id==key){
-                content += '<span>Rp. ' + v.harga + '</span>';
-              }
-            });
-          });
-          content += '<span>' + key + '</span>';
-          content += '<span>' + value + '</span>';
-        });
-        content += '</td>'
-        content += '</tr>';
-    });
-    //}
-    console.log(content);
-    $('#object').html(content);
-  });
-  });*/
   const dbRef = firebase.database().ref();
   
   dbRef.child('orders').once('value',function(snaporder){
@@ -59,14 +36,16 @@ is_admin: true
         content += '<td>' + val.nohp + '</td>';
         content += '<td>';
         val.produk.forEach(function(value, key){
+          content += '<div>';
           snapproduk.forEach(function(i){
             var v = i.val();
             if(v.id==key){
-              content += '<span>Rp. ' + v.harga + '</span>';
+              content += '<span>' + v.name + '</span> / ';
+              content += '<span>Rp. ' + v.harga + '</span> ';
             }
           });
-          content += '<span>' + key + '</span>';
           content += '<span>' + value + '</span>';
+          content += '</div>';
         });
         content += '</td>';
         content += '</tr>';
