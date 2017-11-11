@@ -30,9 +30,9 @@ is_admin: true
             snaps.forEach(function(i){
               var v = i.val();
               if(v.id==key){
+                console.log(v.id);
                 content += '<span>Rp. ' + v.harga + '</span>';
               }
-              console.log(v.harga);
             });
           });
           content += '<span>' + key + '</span>';
