@@ -13,7 +13,7 @@ is_admin: true
     		text-align: center;
 		font-style: italic;
 		margin-bottom: 3rem;
-		padding:1rem;
+		padding:0 1rem;
 	}
 	#form--pemesanan{padding:0;border:1px solid #eee}
 	#form--pemesanan .a1{
@@ -27,12 +27,19 @@ is_admin: true
 		padding:1.5rem;
 		list-style:none;
 	}
+	#form--pemesanan ul li{margin-bottom:1rem}
 	#form--pemesanan ul label{font-weight:bold}
 	#form--pemesanan ul li input,#form--pemesanan ul li textarea{
 	    	width: 100%;
     		padding: 0.75rem 1rem;
     		border-radius: 5px;
     		border: 1px solid #ccc;
+	}
+	#form--pemesanan ul li input[type:submit]{
+	    	font-weight: bold;
+    		font-size: 1.2125rem;
+    		background: green;
+    		color: #fff;
 	}
 	span.p2{color:red;text-decoration:line-through}
 	span.p3{color:green}
@@ -89,7 +96,7 @@ is_admin: true
 		<li class="buttons">
 		<input type="hidden" name="form_id" value="58293">
 
-		<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit">
+		<input id="saveForm" class="button_text" type="submit" name="submit" value="SUBMIT">
 		</li>
 	</ul>
 </div>
