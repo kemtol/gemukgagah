@@ -105,16 +105,22 @@ is_admin: true
 	</ul>
 </div>
 <script>
-	const dbRef = firebase.database();
-	var timestamp = + new Date();
-	dbRef.ref('orders/'+timestamp).set({
-		orderid: timestamp,
-		alamat: "cinere",
-		nama: "errol",
-		nohp: "083890722797",
-		ref: "gemukgagah",
-		produk: {
-			    "1" : "ordered"
-			}
+	$(document).ready(function(){
+		$("#saveForm").click(function(){
+			const dbRef = firebase.database();
+			var timestamp = + new Date();
+		
+		
+			dbRef.ref('orders/'+timestamp).set({
+				orderid: timestamp,
+				alamat: "cinere",
+				nama: "errol",
+				nohp: "083890722797",
+				ref: "gemukgagah",
+				produk: {
+					    "1" : "ordered"
+					}
+			});
+		});
 	});
 </script>
