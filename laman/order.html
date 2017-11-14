@@ -72,35 +72,33 @@ is_admin: true
 		<li id="li_1">
 		<label class="description" for="element_1">Nama </label>
 		<div>
-		<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""> 
+		<input id="xnama" name="element_1" class="element text medium" type="text" maxlength="255" value=""> 
 		</div> 
 		</li>
 
 		<li id="li_3">
-		<label class="description" for="element_3">No HP </label>
-		<div>
-		<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""> 
-		</div> 
+			<label class="description" for="element_3">No HP </label>
+			<div>
+				<input id="xhp" name="element_3" class="element text medium" type="text" maxlength="255" value=""> 
+			</div> 
 		</li>
 
 		<li id="li_4">
-		<label class="description" for="element_4">Email </label>
-		<div>
-		<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""> 
-		</div> 
+			<label class="description" for="element_4">Email </label>
+			<div>
+				<input id="xemail" name="element_4" class="element text medium" type="text" maxlength="255" value=""> 
+			</div> 
 		</li>
 
 		<li id="li_2">
-		<label class="description" for="element_2">Alamat </label>
-		<div>
-		<textarea id="element_2" name="element_2" class="element textarea medium"></textarea> 
-		</div> 
+			<label class="description" for="element_2">Alamat </label>
+			<div>
+				<textarea id="xalamat" name="element_2" class="element textarea medium"></textarea> 
+			</div> 
 		</li>
 
 		<li class="buttons">
-		<input type="hidden" name="form_id" value="58293">
-
-		<input id="saveForm" class="button_text" type="submit" name="submit" value="SUBMIT">
+			<input id="saveForm" class="button_text" type="submit" name="submit" value="SUBMIT">
 		</li>
 	</ul>
 </div>
@@ -109,15 +107,18 @@ is_admin: true
 		$("#saveForm").click(function(){
 			const dbRef = firebase.database();
 			var timestamp = + new Date();
-		
+			var nama = $("#xnama").val();
+			var nohp = $("#xhp").val();
+			var email = $("#xemail").val();
+			var alamat = $("#xalamat").val();
 		
 			dbRef.ref('orders/'+timestamp).set({
-				orderid: timestamp,
-				alamat: "cinere",
-				nama: "errol",
-				nohp: "083890722797",
-				ref: "gemukgagah",
-				produk: {
+				"orderid" : timestamp,
+				"alamat" : alamat,
+				"nama" : nama,
+				"nohp" : nohp,
+				"ref" : "gemukgagah",
+				"produk" : {
 					    "1" : "ordered"
 					}
 			});
