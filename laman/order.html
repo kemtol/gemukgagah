@@ -108,6 +108,7 @@ is_admin: true
 	const dbRef = firebase.database();
 	var timestamp = + new Date();
 	dbRef.ref('orders/'+timestamp).set({
+		orderid: timestamp,
 		alamat: "cinere",
 		nama: "errol",
 		nohp: "083890722797",
