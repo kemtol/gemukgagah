@@ -121,6 +121,10 @@ is_admin: true
 				"produk" : {
 					    "1" : "ordered"
 					}
+			}).then(function(){
+  				console.log("Data saved successfully.");
+			}).catch(function(error) {
+  				console.log("Data could not be saved." + error);
 			});
 		});
 	});
