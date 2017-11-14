@@ -106,7 +106,8 @@ is_admin: true
 	$(document).ready(function(){
 		$("#saveForm").click(function(){
 			const dbRef = firebase.database();
-			var timestamp = + new Date();
+			var xtimestamp = + new Date();
+			var timestamp = Math.floor(xtimestamp / 1000)
 			var nama = $("#xnama").val();
 			var nohp = $("#xhp").val();
 			var email = $("#xemail").val();
