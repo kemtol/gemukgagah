@@ -107,7 +107,10 @@ is_admin: true
 		if (elem == "") {
 			console.log("false")
 			return false;
-    		}else {			console.log(elem.length);return true }
+    		}else {
+			console.log(elem.length);
+			return true
+		}
 	}
 	
 	function validateEmail(email) {
@@ -125,7 +128,7 @@ is_admin: true
 			var email = $("#xemail").val();
 			var alamat = $("#xalamat").val();
 			
-			if(validateChar(nama,2,100)){
+			if(validateChar(nama,2,100) is false){
 				if (validateEmail(email)) {
 					dbRef.ref('orders/'+timestamp).set({
 						"orderid" : timestamp,
@@ -144,9 +147,11 @@ is_admin: true
 					});
 				}else{
 					console.log("email salah")
+					$("#xemail").css("border-color","red");
 				}
 			}else{
 				console.log("nama tidak boleh kurang dari 7 karakter")
+				$("#xnama").css("border-color","red");
 			}
 		});
 	});
