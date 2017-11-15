@@ -104,7 +104,9 @@ is_admin: true
 </div>
 <script>
 	function validateChar(elem,min,max){
-		var uInput = elem.value;
+		var xInput = elem.value;
+		var uInput = xInput.toString();
+		
 		if(uInput.length >= min && uInput.length <= max && uInput.substr(0, 1) == "Z"){
 		  alert("Material number has to consist of 10 characters begining with Z");
 		  elem.focus();
