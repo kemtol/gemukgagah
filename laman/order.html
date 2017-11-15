@@ -107,9 +107,13 @@ is_admin: true
 		var uInput = elem;
 		
 		if(uInput.length >= min && uInput.length <= max && uInput.substr(0, 1) == "Z"){
+			alert("false");
 			return false;
 		}
-		else return true; //i 
+		else{
+			alert("true");
+			return true; //i 
+		}
 	}
 	
 	function validateEmail(email) {
