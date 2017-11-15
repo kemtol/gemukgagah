@@ -104,16 +104,10 @@ is_admin: true
 </div>
 <script>
 	function validateChar(elem,min,max){
-		var uInput = elem;
-		
-		if(uInput.length >= min && uInput.length <= max && uInput.substr(0, 1) == "Z"){
-			alert("false");
+		if (x == "") {
+			console.log("false")
 			return false;
-		}
-		else{
-			alert("true");
-			return true; //i 
-		}
+    		}else {			console.log(elem.length);return true }
 	}
 	
 	function validateEmail(email) {
