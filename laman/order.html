@@ -107,9 +107,7 @@ is_admin: true
 		var uInput = elem;
 		
 		if(uInput.length >= min && uInput.length <= max && uInput.substr(0, 1) == "Z"){
-		  alert("Material number has to consist of 10 characters begining with Z");
-		  elem.focus();
-		return false;
+			return false;
 		}
 		else return true; //i 
 	}
