@@ -103,6 +103,12 @@ is_admin: true
 	</ul>
 </div>
 <script>
+	
+	function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
+	
 	$(document).ready(function(){
 		$("#saveForm").click(function(){
 			const dbRef = firebase.database();
@@ -112,22 +118,26 @@ is_admin: true
 			var nohp = $("#xhp").val();
 			var email = $("#xemail").val();
 			var alamat = $("#xalamat").val();
-		
-			dbRef.ref('orders/'+timestamp).set({
-				"orderid" : timestamp,
-				"alamat" : alamat,
-				"nama" : nama,
-				"nohp" : nohp,
-				"ref" : "gemukgagah",
-				"produk" : {
-					    "1" : "ordered"
-					}
-			}).then(function(){
-				window.location = 'terimakasih.html';
-  				console.log("Data saved successfully.");
-			}).catch(function(error) {
-  				console.log("Data could not be saved." + error);
-			});
+			
+			if (validateEmail(email)) {
+				dbRef.ref('orders/'+timestamp).set({
+					"orderid" : timestamp,
+					"alamat" : alamat,
+					"nama" : nama,
+					"nohp" : nohp,
+					"ref" : "gemukgagah",
+					"produk" : {
+						    "1" : "ordered"
+						}
+				}).then(function(){
+					window.location = 'terimakasih.html';
+					console.log("Data saved successfully.");
+				}).catch(function(error) {
+					console.log("Data could not be saved." + error);
+				});
+			}else{
+				console.log("email salah")
+			}
 		});
 	});
 </script>
