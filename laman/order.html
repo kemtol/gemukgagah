@@ -125,7 +125,7 @@ is_admin: true
 			var email = $("#xemail").val();
 			var alamat = $("#xalamat").val();
 			
-			if(validateChar(nama,2,100)==true){
+			if(validateChar(nama,2,100)){
 				if (validateEmail(email)) {
 					dbRef.ref('orders/'+timestamp).set({
 						"orderid" : timestamp,
